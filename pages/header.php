@@ -1,21 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" href="?page=index"><img src="./assets/images/logo.jpg" alt="QueenChess" height="40"></a>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
+      <li class="nav-item <?= (isset($_GET['page'])) ?
+                            (($_GET['page'] === 'index')
+                              ? 'active' :
+                              '') :
+                            'active' ?>">
         <a class="nav-link" href="?page=index">Accueil<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?= (isset($_GET['page'])) ?
+                            (($_GET['page'] === 'play') ? 'active' : '')
+                            : '' ?>">
         <a class="nav-link" href="?page=play">Jouer</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?= (isset($_GET['page'])) ?
+                            (($_GET['page'] === 'friends') ? 'active' : '')
+                            : '' ?>">
         <a class="nav-link" href="?page=friends">Amis</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?= (isset($_GET['page'])) ?
+                            (($_GET['page'] === 'profile') ? 'active' : '')
+                            : '' ?>">
         <a class="nav-link" href="?page=profile">Profil</a>
       </li>
     </ul>
