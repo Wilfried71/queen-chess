@@ -21,7 +21,7 @@
     </ul>
     <?php
     // If the user is logged in
-    if ((!isset($_SESSION['logged']) || $_SESSION['logged'] == false) && $_GET['page'] != 'login') {
+    if ((!isset($_SESSION['logged']) || $_SESSION['logged'] == false)) {
       echo '<button class="btn btn-success my-2 my-sm-0" id="btn-login">Se connecter</button>';
     }
     ?>
